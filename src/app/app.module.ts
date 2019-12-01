@@ -15,7 +15,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+        { path: "", component: HomeComponent },
+        { path: "**", component: NotFoundComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
