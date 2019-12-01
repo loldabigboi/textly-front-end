@@ -2,7 +2,7 @@
     <a routerLink="/" class="navbar-brand">
         <img id="navbar-logo" src="../../assets/brand/logo.png" width="auto" height="42px" />
     </a>
-    <a routerLink="/" routerLinkActive="link-active" class="navbar-nav">
+    <a routerLink="/" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" class="navbar-nav">
         Home
     </a>
     <a routerLink="/create" routerLinkActive="link-active" class="navbar-nav">
