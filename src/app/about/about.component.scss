@@ -7,7 +7,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    //justify-content: center;
 
 }
 
@@ -15,7 +14,11 @@
     width: 600px;
 }
 
-img {
+#textlyLogoImg {
     margin: 150px auto;
     display: block;
+}
+
+li {
+    line-height: 28px;
 }
