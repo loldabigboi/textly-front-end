@@ -2,9 +2,17 @@
 
 nav {
     background-color: $secondaryColor;
+
+    // we adjust the padding to make links fill height of nav
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar-nav {
+
+    // see above
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     font-size: 18px;
     font-weight: 350;
@@ -19,5 +27,13 @@ nav {
         color: $hoveredNavColor;
 
     }
+
+}
+
+.link-active {
+
+
+    padding-bottom: 17px; // decrease padding to compensate for border
+    border-bottom: 2px solid black;
 
 }

@@ -1,0 +1,21 @@
+@import "../styleVariables.scss";
+
+:host {
+
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    //justify-content: center;
+
+}
+
+#content-container {
+    width: 600px;
+}
+
+img {
+    margin: 150px auto;
+    display: block;
+}
