@@ -1,5 +1,23 @@
-$primaryColor: rgb(255, 251, 130);
+@import "../styleVariables.scss";
 
 nav {
-    background-color: $primaryColor;
+    background-color: $secondaryColor;
+}
+
+.navbar-nav {
+
+    font-size: 18px;
+    font-weight: 350;
+    margin-left: 15px;
+    margin-right: 10px;
+
+    color: $unhoveredNavColor;
+
+    &:hover {
+
+        text-decoration: none;
+        color: $hoveredNavColor;
+
+    }
+
 }
