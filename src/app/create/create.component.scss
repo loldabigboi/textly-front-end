@@ -10,8 +10,16 @@
 
 }
 
-#logoImg {
-    display: block;
-    margin: 0 auto;
-    margin-top: 75px;
+#bodyTextArea {
+
+    min-height: 200px;
+
+}
+
+#create-button {
+    float: right;
+}
+
+label {
+    font-size: 17px;
 }

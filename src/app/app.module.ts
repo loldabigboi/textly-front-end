@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { SupportComponent } from './support/support.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { SupportComponent } from './support/support.component';
     HomeComponent,
     NotFoundComponent,
     AboutComponent,
-    SupportComponent
+    SupportComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
         { path: "about", component: AboutComponent },
         { path: "support", component: SupportComponent },
+        { path: "create", component: CreateComponent },
         { path: "", component: HomeComponent },
         { path: "**", component: NotFoundComponent }
     ])
