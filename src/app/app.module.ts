@@ -22,6 +22,7 @@ import { SupportComponent } from './support/support.component';
     BrowserModule,
     RouterModule.forRoot([
         { path: "about", component: AboutComponent },
+        { path: "support", component: SupportComponent },
         { path: "", component: HomeComponent },
         { path: "**", component: NotFoundComponent }
     ])
