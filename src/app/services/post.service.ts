@@ -17,7 +17,7 @@ export class PostService {
         const token = window.localStorage.getItem("access-token");
         const user = (new JwtHelperService).decodeToken(token);
 
-        return this.http.post("http://localhost:3000/api/post", {
+        return this.http.post("http://localhost:3000/api/posts", {
             title: title,
             body: body,
             tags: tags
@@ -27,7 +27,7 @@ export class PostService {
 
     getPost(postId: string) {
 
-        return this.http.get("http://localhost:3000/api/post/" + postId);
+        return this.http.get("http://localhost:3000/api/posts/" + postId);
 
     }
 

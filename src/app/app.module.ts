@@ -18,6 +18,7 @@ import { PostService } from './services/post.service';
 import { PostComponent } from './post/post.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './services/register.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
     declarations: [
@@ -55,6 +56,7 @@ import { RegisterService } from './services/register.service';
         LoginService,
         PostService,
         RegisterService,
+        UserService,
         AuthGuard
     ],
   bootstrap: [AppComponent]
