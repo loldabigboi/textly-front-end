@@ -20,9 +20,6 @@
     margin-left: 10px;
 }
 
-#loginForm {
-}
-
 #loginForm > .input-group {
 
     margin-bottom: 10px;
@@ -31,6 +28,10 @@
         margin-right: 8px;
     }
 
+}
+
+.primary-button {
+    display: inline-block !important;
 }
 
 .form-control {
@@ -43,10 +44,16 @@
 
 }
 
-#loginButton {
-    padding: 5px 15px;
-    margin: 20px auto 0px auto;
-    display: block;
+#buttonContainer {
+
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+
+    & > button {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 }
 
 #invalidAlert {

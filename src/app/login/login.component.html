@@ -27,11 +27,16 @@
     <div *ngIf="form.invalid" class="alert alert-danger" id="invalidAlert">
         Invalid email or password
     </div>
-    <button id="loginButton" 
-            type="submit" 
-            class="primary-button"
-            [disabled]="form.pending">
-        <div *ngIf="!authenticating">Login</div>
-        <div *ngIf="authenticating" class="spinner-border spinner-border-sm text-dark"></div>
-    </button>
+    <div id="buttonContainer">
+        <button id="registerButton"
+                class="primary-button"
+                (click)="router.navigateByUrl('/register')">Register</button>
+        <button id="loginButton" 
+                type="submit" 
+                class="primary-button"
+                [disabled]="form.pending">
+            <div *ngIf="!authenticating">Login</div>
+            <div *ngIf="authenticating" class="spinner-border spinner-border-sm text-dark"></div>
+        </button>
+    </div>
 </form>
