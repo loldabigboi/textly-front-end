@@ -1,0 +1,81 @@
+<span id="registerHeader">
+    Register an account with <img src="../../assets/brand/logo.png" height="64px" width="auto">
+</span>
+<form id="registerForm" #form="ngForm" (ngSubmit)="submit(form.form)">
+    
+    <div class="input-group">
+        <label for="emailInput">Email: </label>
+        <input ngModel 
+                [(ngModel)]="details.email"
+                email
+                type="text" 
+                class="form-control primary-input" 
+                placeholder="example@example.com"
+                name="email"
+                (keyup)="form.form.setErrors(null); emailTaken=false;"
+                id="emailInput"
+                #email="ngModel"
+                maxlength="64"
+                required>
+    </div>
+
+    <div class="alert alert-danger"
+         *ngIf="email.touched && email.invalid">
+         <div *ngIf="email.errors.required">Email is required.</div>
+         <div *ngIf="email.errors.email">Must be a valid email address.</div>
+         <div *ngIf="emailTaken">Must be a valid email address.</div>
+    </div>
+
+    <div class="input-group">
+        <label for="usernameInput">Username: </label>
+        <input ngModel 
+                [(ngModel)]="details.username"
+                type="text" 
+                class="form-control primary-input" 
+                placeholder="textlyUser001"
+                name="username"
+                (keyup)="form.form.setErrors(null); usernameTaken=false;"
+                id="usernameInput"
+                #username="ngModel"
+                minlength="4"
+                maxlength="64"
+                required>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+            <div *ngIf="username.errors.required">Username is required.</div>
+            <div *ngIf="username.errors.minlength">
+                Username must be at least <b>{{username.errors.minlength.requiredLength}}</b> characters long
+            </div>
+            <div *ngIf="usernameTaken">Username is taken.</div>
+    </div>
+    
+    <div class="input-group">
+        <label for="passwordInput">Password: </label>
+        <input ngModel 
+                [(ngModel)]="details.password"
+                type="password" 
+                class="form-control primary-input" 
+                id="passwordInput"
+                (keyup)="form.form.setErrors(null)"
+                name="password"
+                #password="ngModel"
+                minlength="8"
+                maxlength="64"
+                required>
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+        <div *ngIf="password.errors.required">Password is required.</div>
+        <div *ngIf="password.errors.minlength">
+            Password must be at least <b>{{password.errors.minlength.requiredLength}}</b> characters long.
+        </div>
+    </div>
+    
+    <button id="registerButton"
+            type="submit"
+            class="primary-button"
+            [disabled]="form.invalid">Register</button>
+    
+</form>
+    

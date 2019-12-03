@@ -1,0 +1,51 @@
+@import "../../styleVariables.scss";
+
+:host {
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#registerHeader {
+    margin-bottom: 23px;
+    font-size: 22px;
+}
+
+#registerHeader > img {
+    margin-left: 10px;
+}
+
+#registerButton {
+    margin: 15px auto;
+    display: block;
+}
+
+#registerForm > .input-group {
+
+    margin-bottom: 10px;
+
+    & > label {
+        margin-right: 8px;
+    }
+
+}
+
+.form-control {
+    border-radius: 6px !important;
+}
+
+.input-group > label {
+
+    margin: auto;
+
+}
+
+.alert-danger {
+    padding: 6px 10px;
+    font-size: 14px;
+}

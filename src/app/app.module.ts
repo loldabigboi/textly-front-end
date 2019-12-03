@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './services/auth-guard.service';
 import { PostService } from './services/post.service';
 import { PostComponent } from './post/post.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterService } from './services/register.service';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,8 @@ import { PostComponent } from './post/post.component';
         SupportComponent,
         CreateComponent,
         LoginComponent,
-        PostComponent
+        PostComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule,
@@ -40,6 +43,7 @@ import { PostComponent } from './post/post.component';
                 canActivate: [ AuthGuard ]
             },
             { path: "login", component: LoginComponent },
+            { path: "register", component: RegisterComponent },
             { path: "posts/:id", component: PostComponent },
             { path: "", component: HomeComponent },
             { path: "**", component: NotFoundComponent }
@@ -50,6 +54,7 @@ import { PostComponent } from './post/post.component';
     providers: [ 
         LoginService,
         PostService,
+        RegisterService,
         AuthGuard
     ],
   bootstrap: [AppComponent]
