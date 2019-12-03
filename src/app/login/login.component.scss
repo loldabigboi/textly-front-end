@@ -1,0 +1,54 @@
+@import "../../styleVariables.scss";
+
+:host {
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#loginHeader {
+    margin-bottom: 23px;
+    font-size: 22px;
+}
+
+#loginHeader > img {
+    margin-left: 10px;
+}
+
+#loginForm {
+}
+
+#loginForm > .input-group {
+
+    margin-bottom: 10px;
+
+    & > label {
+        margin-right: 8px;
+    }
+
+}
+
+.form-control {
+    border-radius: 6px !important;
+}
+
+.input-group > label {
+
+    margin: auto;
+
+}
+
+#loginButton {
+    padding: 5px 15px;
+    margin: 20px auto 0px auto;
+    display: block;
+}
+
+#invalidAlert {
+    padding: 7px 10px;
+}

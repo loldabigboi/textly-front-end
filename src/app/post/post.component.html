@@ -1,0 +1,16 @@
+<div class="content-container">
+    <div *ngIf="loadingPost" id="postLoadingContainer">
+        <div id="postLoadingSpinner" class="spinner-border text-dark"></div>
+        <h5 style="text-align: center">Loading...</h5>
+    </div>
+    <div *ngIf="!loadingPost">
+        <h3>{{post.title}}</h3>
+        <br>
+        <p style="text-align: justify;">{{post.body}}</p>
+        <hr>
+        <div id="tag-container">
+            <span>Tags: </span>
+            <div *ngFor="let tag of post.tags" class="tag-pill">{{tag}}</div>
+        </div>
+    </div>
+</div>

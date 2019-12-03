@@ -1,5 +1,5 @@
 <img src="../../assets/home.png" />
-<div class="input-group">
+<form class="input-group" #form="ngForm" (ngSubmit)="onSubmit(form)">
     <span class="my-auto" style="font-size: 18px">
         Search for an upload: 
     </span>
@@ -7,10 +7,13 @@
            class="form-control primary-input" 
            placeholder="Upload ID" 
            id="idInput"
+           ngModel
+           name="postId"
+           required
            style="max-width: 400px; margin-left: 10px;">
     <span class="input-group-btn">
-        <button type="submit" class="primary-button">
+        <button type="submit" class="primary-button" [disabled]="form.invalid">
             Search
         </button>
     </span>
-</div>
+</form>

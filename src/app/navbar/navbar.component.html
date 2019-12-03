@@ -5,7 +5,7 @@
     <a routerLink="/" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" class="navbar-nav">
         Home
     </a>
-    <a routerLink="/create" routerLinkActive="link-active" class="navbar-nav">
+    <a routerLink="/create" routerLinkActive="link-active" class="navbar-nav nav">
         Create
     </a>
     <a routerLink="/about" routerLinkActive="link-active" class="navbar-nav">
@@ -14,7 +14,19 @@
     <a routerLink="/support" routerLinkActive="link-active" class="navbar-nav">
         Support
     </a>
-    <a routerLink="/login" class="navbar-nav ml-auto">
-        Login
-    </a>
+    <div *ngIf="loginService.isLoggedIn()" class="ml-auto">
+        <span class="navbar-nav" id="loggedInSpan">
+            Hi, {{loginService.getLoggedInUser().username}}!
+            <button class="primary-button" 
+                    (click)="onLogout()"
+                    id="logoutButton">Logout</button>
+        </span>
+        
+    </div>
+    <div *ngIf="!loginService.isLoggedIn()" class="ml-auto">
+        <a routerLink="/login" routerLinkActive="link-active" class="navbar-nav">
+            Login
+        </a>
+    </div>
+        
 </nav>

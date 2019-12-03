@@ -1,19 +1,45 @@
 <div class="content-container">
     <h2>Create new post</h2>
     <br>
-    <form class="form-group">
+    <form class="form-group" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <label for="titleInput"><b>Title of post:</b></label>
         <input type="text"
                class="form-control primary-input" 
                id="titleInput"
-               formControlName="titleInput" 
-               placeholder="Enter title here...">
+               placeholder="Enter title here..."
+               name="title"
+               ngModel
+               required
+               #titleInput="ngModel">
+        <div *ngIf="titleInput.invalid && titleInput.touched"
+             class="alert alert-danger model-alert">
+             Title of post is required.    
+        </div>
         <br>
         <label for="bodyTextArea"><b>Body of post:</b></label>
         <textarea class="form-control primary-input" 
                   rows="15" 
                   id="bodyTextArea"
-                  placeholder="Enter body here..."></textarea>
+                  placeholder="Enter body here..."
+                  ngModel
+                  name="body"
+                  required
+                  #bodyInput="ngModel"></textarea>
+        <div *ngIf="bodyInput.invalid && bodyInput.touched"
+             class="alert alert-danger model-alert">
+            Body of post is required.    
+        </div>
+        <textarea class="form-control primary-input"
+                 rows="1"
+                 id="tagsInput"
+                 placeholder="Tags (separate them with a space)"
+                 contenteditable="true"
+                 ngModel
+                 name="tags"></textarea>
+        <button type="submit" 
+                class="primary-button" 
+                id="createButton"
+                [disabled]="form.invalid">Create</button>
     </form>
-    <button type="submit" class="primary-button" id="create-button">Create</button>
+    
 </div>

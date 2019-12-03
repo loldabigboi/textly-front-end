@@ -16,8 +16,19 @@
 
 }
 
-#create-button {
+#createButton {
+    margin-top: 10px;
     float: right;
+}
+
+#tagsInput {
+    margin-top: 10px;
+    resize: none; // all resizing is done by component class
+}
+
+.model-alert {
+    font-size: 14px;
+    padding: 4px 9px;
 }
 
 label {

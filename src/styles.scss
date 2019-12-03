@@ -24,7 +24,7 @@
     border: 1px solid rgba(0,0,0,0.15);
     padding: 6px 10px;
 
-    &:hover {
+    &:hover:enabled {
         background-color: darken($secondaryColor, 16%);
     }
 
