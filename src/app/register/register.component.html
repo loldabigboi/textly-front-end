@@ -12,7 +12,7 @@
                 class="form-control primary-input" 
                 placeholder="example@example.com"
                 name="email"
-                (keyup)="form.form.setErrors(null); emailTaken=false;"
+                (keyup)="resetErrors($event, 'email')"
                 id="emailInput"
                 #email="ngModel"
                 maxlength="64"
@@ -20,10 +20,10 @@
     </div>
 
     <div class="alert alert-danger"
-         *ngIf="email.touched && email.invalid">
-         <div *ngIf="email.errors.required">Email is required.</div>
-         <div *ngIf="email.errors.email">Must be a valid email address.</div>
-         <div *ngIf="emailTaken">Must be a valid email address.</div>
+         *ngIf="email.touched && email.invalid || emailTaken">
+         <div *ngIf="email.errors && email.errors.required">Email is required.</div>
+         <div *ngIf="email.errors && email.errors.email">Must be a valid email address.</div>
+         <div *ngIf="emailTaken">Account with that email address already registered.</div>
     </div>
 
     <div class="input-group">
@@ -34,7 +34,7 @@
                 class="form-control primary-input" 
                 placeholder="textlyUser001"
                 name="username"
-                (keyup)="form.form.setErrors(null); usernameTaken=false;"
+                (keyup)="resetErrors($event, 'username')"
                 id="usernameInput"
                 #username="ngModel"
                 minlength="4"
@@ -42,9 +42,9 @@
                 required>
     </div>
 
-    <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
-            <div *ngIf="username.errors.required">Username is required.</div>
-            <div *ngIf="username.errors.minlength">
+    <div class="alert alert-danger" *ngIf="username.touched && username.invalid || usernameTaken">
+            <div *ngIf="username.errors && username.errors.required">Username is required.</div>
+            <div *ngIf="username.errors && username.errors.minlength">
                 Username must be at least <b>{{username.errors.minlength.requiredLength}}</b> characters long
             </div>
             <div *ngIf="usernameTaken">Username is taken.</div>
@@ -57,7 +57,6 @@
                 type="password" 
                 class="form-control primary-input" 
                 id="passwordInput"
-                (keyup)="form.form.setErrors(null)"
                 name="password"
                 #password="ngModel"
                 minlength="8"

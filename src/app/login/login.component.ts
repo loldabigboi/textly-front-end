@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Location } from "@angular/common";
 import { HttpResponse } from '@angular/common/http';
@@ -51,6 +51,12 @@ export class LoginComponent implements OnInit {
             this.authenticating = false; 
         });
 
+    }
+
+    resetErrors(event: KeyboardEvent, form: FormGroup): void {
+        if (event.keyCode !== 13) {  // if enter not released
+            form.setErrors(null);  // clear errors for form (i.e. the "invalid password / email" error)
+        }
     }
 
     ngOnInit() {

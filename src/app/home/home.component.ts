@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+    private postsLoaded: boolean = false;
+
     constructor(
         private router: Router
     ) { }

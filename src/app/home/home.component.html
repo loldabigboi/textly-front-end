@@ -1,19 +1,23 @@
-<img src="../../assets/home.png" />
-<form class="input-group" #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <span class="my-auto" style="font-size: 18px">
-        Search for an upload: 
-    </span>
-    <input type="text" 
-           class="form-control primary-input" 
-           placeholder="Upload ID" 
-           id="idInput"
-           ngModel
-           name="postId"
-           required
-           style="max-width: 400px; margin-left: 10px;">
-    <span class="input-group-btn">
-        <button type="submit" class="primary-button" [disabled]="form.invalid">
-            Search
-        </button>
-    </span>
-</form>
+<div class="content-container">
+    <img src="../../assets/home.png" id="welcomeImage"/>
+    <form class="input-group" id="searchContainer" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <span class="my-auto" style="font-size: 18px">
+            Search for an upload: 
+        </span>
+        <input type="text" 
+               class="form-control primary-input" 
+               placeholder="Upload ID" 
+               id="idInput"
+               ngModel
+               name="postId"
+               required
+               style="max-width: 400px; margin-left: 10px;">
+        <span class="input-group-btn">
+            <button type="submit" id="searchButton" class="primary-button" [disabled]="form.invalid">
+                Search
+            </button>
+        </span>
+    </form>
+    <span id="postsViewHeader">Recent posts:</span>
+    <posts-view count="10" id="postsView" ></posts-view>
+</div>

@@ -7,9 +7,9 @@
         <h3>{{post.title}}</h3>
         <p class="static-text">Posted by <span class="dynamic-text">{{post.author.username}}</span> at <span class="dynamic-text">{{post.uploadDate}}</span></p>
         <hr>
-        <p style="text-align: justify;">{{post.body}}</p>
+        <p class="post-body">{{post.body}}</p>
         <hr>
-        <div id="tag-container">
+        <div class="tag-container">
             <span>Tags: </span>
             <div *ngFor="let tag of post.tags" class="tag-pill">{{tag}}</div>
         </div>

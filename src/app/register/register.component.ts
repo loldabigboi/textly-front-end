@@ -61,13 +61,29 @@ export class RegisterComponent implements OnInit {
             
         }, (err) => {
             console.log(err);
-            if (err.message.includes("email")) {
+            if (err.error.includes("email")) {
+                console.log("yea email");
                 this.emailTaken = true;
             }
-            if (err.message.includes("username")) {
+            if (err.error.includes("username")) {
+                console.log("yea username");
                 this.usernameTaken = true;
             }
         });
+
+    }
+
+    resetErrors(event: KeyboardEvent, fieldName: string) {
+
+        if (event.keyCode !== 13) {  // not enter / return
+
+            if (fieldName === "email") {
+                this.emailTaken = false;
+            } else if (fieldName === "username") {
+                this.usernameTaken = false;
+            }
+
+        }
 
     }
 

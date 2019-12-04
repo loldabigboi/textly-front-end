@@ -10,7 +10,7 @@
                class="form-control primary-input" 
                placeholder="example@example.com"
                name="email"
-               (keyup)="form.form.setErrors(null)"
+               (keyup)="resetErrors($event, form.form)" 
                id="emailInput">
     </div>
     <div class="input-group">
@@ -21,7 +21,7 @@
                class="form-control primary-input" 
                placeholder="abc123"
                id="passwordInput"
-               (keyup)="form.form.setErrors(null)"
+               (keyup)="resetErrors($event, form.form)" 
                name="password">
     </div>
     <div *ngIf="form.invalid" class="alert alert-danger" id="invalidAlert">

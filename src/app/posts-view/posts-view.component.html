@@ -1,0 +1,22 @@
+<ul class="list-group">
+    <div *ngFor="let post of posts" class="list-group-item">
+            <div class="post-header-container">
+                <div class="post-div"> 
+                    <span class="dynamic-text post-title">{{post.title}}</span>
+                    <br>
+                    Posted by <span class="dynamic-text">{{post.author.username}}</span>
+                    on <span class="dynamic-text">{{formatDate(post.uploadDate)}}</span>
+                </div>
+                <div class="post-div post-button-container">
+                    <button type="button" class="primary-button" (click)="router.navigateByUrl('/posts/' + post._id)">View</button>
+                </div>
+            </div>
+            <hr>
+            <div class="post-body">{{post.body}}</div>
+            <hr>
+            <div class="tag-container">
+                <span>Tags: </span>
+                <div *ngFor="let tag of post.tags" class="tag-pill">{{tag}}</div>
+            </div>
+    </div>
+</ul>

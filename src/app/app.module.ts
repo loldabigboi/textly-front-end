@@ -19,6 +19,7 @@ import { PostComponent } from './post/post.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './services/register.service';
 import { UserService } from './services/user.service';
+import { PostsViewComponent } from './posts-view/posts-view.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { UserService } from './services/user.service';
         CreateComponent,
         LoginComponent,
         PostComponent,
-        RegisterComponent
+        RegisterComponent,
+        PostsViewComponent
     ],
     imports: [
         BrowserModule,
